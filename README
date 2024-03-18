@@ -1,0 +1,25 @@
+COMP 3005 Assignment (3) - Q(1)
+
+Sean Gordon - 101235002
+
+# Prerequisites
+
+This project requires .NET 8. See https://learn.microsoft.com/en-us/dotnet/core/install/
+for instructions on how to install the .NET 8 SDK. If you are unable to install
+the .NET 8 SDK, precompiled binaries are available in the GitHub releases in
+this repository.
+
+PostgreSQL is also required. See https://www.postgresql.org/docs/current/tutorial-install.html
+
+# Running
+
+Create the schema and default entries by running the file `db_creation.sql`
+against your postgres database.
+
+With the `dotnet` command added to your path, run
+
+`dotnet run [postgres connection string]`
+
+from within the repository directory. For example,
+
+`dotnet run "Host=localhost;Username=postgres;Password=postgres;Database=3005A3Q1"`
