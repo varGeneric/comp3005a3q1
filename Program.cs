@@ -65,10 +65,12 @@ namespace comp3005a3q1
     class StudentManager(string connectionString) : IDisposable {
         StudentContext ctx = new StudentContext(connectionString);
 
+        // Retrieves and displays all records from the students table.
         public IEnumerable<Student> getAllStudents() {
             return ctx.students;
         }
 
+        // Inserts a new student record into the students table.
         public async Task addStudent(string first_name, string last_name, string email, DateTime enrollment_date) {
             var newStudent = new Student() {
                 first_name = first_name,
@@ -80,11 +82,13 @@ namespace comp3005a3q1
             await ctx.SaveChangesAsync();
         }
 
+        // Updates the email address for a student with the specified student_id.
         public Task updateStudentEmail(int student_id, string new_email)
             => ctx.students
                 .Where(s => s.student_id == student_id)
                 .ExecuteUpdateAsync(setters => setters.SetProperty(s => s.email, new_email));
 
+        // Deletes the record of the student with the specified student_id.
         public Task deleteStudent(int student_id) 
             => ctx.students
                 .Where(s => s.student_id == student_id)
