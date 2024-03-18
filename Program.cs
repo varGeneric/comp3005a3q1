@@ -15,7 +15,8 @@ namespace comp3005a3q1
             using(var studentManager = new StudentManager(args[0])) {
                 // Get all students
                 foreach(Student s in studentManager.getAllStudents()) {
-                    Console.WriteLine($"{s.student_id}: {s.first_name} {s.last_name}; email is {s.email}" + (s.enrollment_date.HasValue ? $", enrollment date is {s.enrollment_date}" : ""));
+                    Console.WriteLine($"{s.student_id}: {s.first_name} {s.last_name}; email is {s.email}"
+                        + (s.enrollment_date.HasValue ? $", enrollment date is {s.enrollment_date}" : ""));
                 }
 
                 // Add a student
@@ -54,7 +55,8 @@ namespace comp3005a3q1
 
                 // Get all students, again
                 foreach(Student s in studentManager.getAllStudents()) {
-                    Console.WriteLine($"{s.student_id}: {s.first_name} {s.last_name}; email is {s.email}" + (s.enrollment_date.HasValue ? $", enrollment date is {s.enrollment_date}" : ""));
+                    Console.WriteLine($"{s.student_id}: {s.first_name} {s.last_name}; email is {s.email}"
+                        + (s.enrollment_date.HasValue ? $", enrollment date is {s.enrollment_date}" : ""));
                 }
             }
         }
